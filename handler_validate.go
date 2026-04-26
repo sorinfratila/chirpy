@@ -7,12 +7,12 @@ import (
 )
 
 func handlerChirpsValidate(w http.ResponseWriter, r *http.Request) {
-	type parameters struct {
-		Body string `json:"body"`
-	}
-
 	type validateResp struct {
 		CleanedBody string `json:"cleaned_body"`
+	}
+
+	type parameters struct {
+		Body string `json:"body"`
 	}
 
 	decoder := json.NewDecoder(r.Body)
